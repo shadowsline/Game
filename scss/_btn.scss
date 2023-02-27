@@ -1,0 +1,69 @@
+.btn {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $color-gray-l;
+    background-color: $color-green-l;
+    padding: 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    &::before,
+    &::after {
+        position: absolute;
+        content: '';
+        width: 30rem;
+        height: 5rem;
+        background-color: $color-green-d;
+        top: 0;
+        transform: skew(-30deg);
+        transition: all 1s ease-in-out;
+    }
+    &::before {
+        left: -150%;
+    }
+    &::after {
+        right: -150%;
+    }
+    &:hover {
+        &::before {
+            left: -80%;
+        }
+        &::after {
+            right: -77.54%;
+        }
+    }
+    &:active {
+        transform: scale(0.9);
+        transition: all .5s;
+    }
+}
+.btn-text {
+    position: relative;
+    z-index: 1;
+    transition: all 1s;
+    &:hover {
+        color: transparent;
+        background-clip: text;
+        background-image: linear-gradient(0deg, rgba(248, 244, 5, 0.986) 50%, rgb(9, 157, 243) 100%);
+    }
+}
+
+.card__btn {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $color-gray-l;
+    background-color: $color-green-l;
+    padding: 1.5rem 3rem;
+    transition: all .8s ease-in;
+    cursor: pointer;
+    &:hover {
+        background-color: $color-green-d;
+        color: gold;
+        &:active {
+            transform: scale(.9);
+            transition: all .3s;
+        }
+    }
+}

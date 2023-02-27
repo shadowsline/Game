@@ -1,0 +1,30 @@
+.gamers {
+    background-color: $color-blue-d;
+    grid-column: col-start 7 / full-end;
+    display: grid;
+    grid-template-columns: min-content max-content;
+    grid-gap: 4rem 2rem;
+    align-content: center;
+    justify-content: center;
+    padding: 0 2rem;
+    @include respond(tab-port) {
+        grid-column: 1 / -1;
+        padding: 3rem 2rem;
+    }
+    &__title {
+        grid-column: 1 / -1;
+        justify-self: center;
+        text-transform: uppercase;
+    }
+    &__img {
+        width: 7rem;
+    }
+    &__text {
+        align-self: center;
+    }
+    &__score {
+        font-size: 1.6rem;
+        color: $color-gray-d;
+        font-weight: 300;
+    }
+}

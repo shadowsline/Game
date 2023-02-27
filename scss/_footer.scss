@@ -1,0 +1,36 @@
+.footer {
+    background-color: $color-blue-d;
+    grid-column: full-start / full-end;
+    padding: 8rem 0;
+    border-top: solid .3rem $color-gray-l;
+}
+.nav {
+
+    &__list {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        justify-items: center;
+        gap: 3.5rem;
+    }
+
+    &__item {
+    }
+
+    &__link {
+        &:link,&:visited {
+            font-size: 1.6rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            color: $color-gray-l;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+            transition: all .5s;
+        }
+        &:hover, &:active {
+            color: $color-gray-d;
+            transform: translateY(-.3rem);
+        }
+    }
+}

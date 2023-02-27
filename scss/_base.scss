@@ -1,0 +1,66 @@
+$color-green-d: #425844;
+$color-green-l: #61A568;
+$color-blue-d: #10102C;
+$color-gray-d: #aaaaaa;
+$color-gray-l: #f5f5f5;
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 490px) {
+            @content
+        }
+    }
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 900px) {
+            @content
+        }
+    }
+    @if $breakpoint == tab-lend {
+        @media only screen and (max-width: 1170px) {
+            @content
+        }
+    }
+    @if $breakpoint == big-screen {
+        @media only screen and (max-width: 1800px) {
+            @content
+        }
+    }
+}
+
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    @include respond(tab-lend) {
+        font-size: 50%;
+    }
+    @include respond(phone) {
+        font-size: 40%;
+    }
+}
+body {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: $color-gray-l;
+    font-size: 1.6rem;
+    background-color: $color-gray-l;
+}
+.container {
+    display: grid;
+    grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    @include respond(tab-lend) {
+        grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+        grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    }
+    @include respond(tab-port) {
+        grid-template-rows: 6rem calc(100vh - 6rem) repeat(3, min-content) 50vw repeat(3, min-content);
+    }
+}
+.mb {
+    margin-bottom: 3rem;
+}
+
